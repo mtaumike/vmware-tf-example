@@ -31,19 +31,18 @@ resource "vsphere_virtual_machine" "webservers" {
   }
 
   # internal only - no ipv4 gateway
-  network_interface {
-    label = "${var.web_int_network_switch}"
-
-    ipv4_address       = "${var.web_int_ip_network}.${lookup(var.web_last_octets, count.index)}"
-    ipv4_prefix_length = "${var.web_int_ip_cidr}"
-  }
+  ##network_interface {
+  ##  label = "${var.web_int_network_switch}"
+  ##
+  ##  ipv4_address       = "${var.web_int_ip_network}.${lookup(var.web_last_octets, count.index)}"
+  ##  ipv4_prefix_length = "${var.web_int_ip_cidr}"
+  ##}
 
   disk {
     datastore = "nas001-exp01"
     template  = "Ansible/ubuntu-16-ansible-template-001"
     type      = "thin"
   }
-
   provisioner "file" {
     source      = "${var.web_provision_src_path}"
     destination = "${var.web_provision_dest_path}"
@@ -55,7 +54,6 @@ resource "vsphere_virtual_machine" "webservers" {
       agent       = false
     }
   }
-
   provisioner "remote-exec" {
     connection {
       type        = "ssh"

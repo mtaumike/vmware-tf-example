@@ -93,4 +93,3 @@ variable "app_int_ip_cidr" {
   description = "cidr bit-length"
   default     = "24"
 }
-
