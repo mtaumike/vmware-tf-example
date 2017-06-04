@@ -1,0 +1,9 @@
+.DS_Store
+*.plan
+*.swp
+.idea
+~*
+.terraform/
+./*.tfstate
+terraform.tfstate
+terraform.tfstate*
