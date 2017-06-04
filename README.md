@@ -10,3 +10,7 @@
 * VSPHERE_SERVER = servername - no https, just raw FQDN
 * VSPHERE_USER = username for vSphere environment
 * VSPHERE_PASSWORD = password for vSphere environment
+
+## internal networking is available but commented out
+* application servers - appservers.tf
+* web servers - webservers.tf
