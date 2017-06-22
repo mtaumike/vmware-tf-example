@@ -45,11 +45,15 @@ resource "vsphere_folder" "app_experiment" {
   datacenter = "${var.vsphere_datacenter_name}"
 }
 
+resource "vsphere_folder" "lb_experiment" {
+  path       = "lb_experiment"
+  datacenter = "${var.vsphere_datacenter_name}"
+}
+
 # DNS servers for all
 variable "dns_servers" {
   default = [
     "127.0.0.1",
-    "204.153.247.1",
     "8.8.4.4",
     "8.8.8.8",
   ]
