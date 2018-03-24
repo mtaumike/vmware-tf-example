@@ -54,6 +54,7 @@ resource "vsphere_folder" "lb_experiment" {
 variable "dns_servers" {
   default = [
     "127.0.0.1",
+    "9.9.9.9",
     "8.8.4.4",
     "8.8.8.8",
   ]
@@ -61,6 +62,6 @@ variable "dns_servers" {
 
 variable "dns_suffixes" {
   default = [
-    "geeks.org",
+    "geeks.net",
   ]
 }
